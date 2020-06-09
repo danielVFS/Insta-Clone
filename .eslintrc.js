@@ -35,5 +35,6 @@ module.exports = {
     'no-use-before-define': 'off',
     'react/prefer-stateless-function': 'off',
     'global-require': 'off',
+    'react/destructuring-assignment': 'off',
   },
 };
