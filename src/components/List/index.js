@@ -7,6 +7,52 @@ export default class List extends React.Component {
     this.state = {
       feed: this.props.data,
     };
+
+    this.loadIcon = this.loadIcon.bind(this);
+    this.seeLikes = this.seeLikes.bind(this);
+    this.like = this.like.bind(this);
+  }
+
+  loadIcon(likeada) {
+    return likeada
+      ? require('../../assets/likeada.png')
+      : require('../../assets/like.png');
+  }
+
+  like() {
+    const { feed } = this.state;
+
+    if (feed.likeada === true) {
+      this.setState({
+        feed: {
+          ...feed,
+          likeada: false,
+          likers: feed.likers - 1,
+        },
+      });
+    } else {
+      this.setState({
+        feed: {
+          ...feed,
+          likeada: true,
+          likers: feed.likers + 1,
+        },
+      });
+    }
+  }
+
+  seeLikes() {
+    const { feed } = this.state;
+
+    if (feed.likers <= 0) {
+      return;
+    }
+
+    return (
+      <Text style={styles.likesText}>
+        {feed.likers} {feed.likers > 1 ? 'curtidas' : 'curtida'}
+      </Text>
+    );
   }
 
   render() {
@@ -28,9 +74,9 @@ export default class List extends React.Component {
         />
 
         <View style={styles.interactionArea}>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={this.like}>
             <Image
-              source={require('../../assets/like.png')}
+              source={this.loadIcon(this.state.feed.likeada)}
               style={styles.interactionIcons}
             />
           </TouchableOpacity>
@@ -41,6 +87,8 @@ export default class List extends React.Component {
             />
           </TouchableOpacity>
         </View>
+
+        {this.seeLikes(this.state.feed.likers)}
 
         <View style={styles.postInfo}>
           <Text style={styles.postUsername}>{this.state.feed.name}</Text>
@@ -105,5 +153,9 @@ const styles = StyleSheet.create({
     paddingLeft: 5,
     fontSize: 15,
     color: '#222',
+  },
+  likesText: {
+    fontWeight: 'bold',
+    marginLeft: 5,
   },
 });

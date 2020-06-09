@@ -36,5 +36,7 @@ module.exports = {
     'react/prefer-stateless-function': 'off',
     'global-require': 'off',
     'react/destructuring-assignment': 'off',
+    'consistent-return': 'off',
+    'class-methods-use-this': 'off',
   },
 };

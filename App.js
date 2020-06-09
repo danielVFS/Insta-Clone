@@ -22,7 +22,7 @@ export default class App extends React.Component {
             'https://sujeitoprogramador.com/instareact/fotoPerfil1.png',
           publicationImg: 'https://sujeitoprogramador.com/instareact/foto1.png',
           likeada: false,
-          likers: 0,
+          likers: 1,
         },
         {
           id: '2',
@@ -31,8 +31,8 @@ export default class App extends React.Component {
           profileImg:
             'https://sujeitoprogramador.com/instareact/fotoPerfil2.png',
           publicationImg: 'https://sujeitoprogramador.com/instareact/foto2.png',
-          likeada: false,
-          likers: 0,
+          likeada: true,
+          likers: 2,
         },
         {
           id: '3',
@@ -52,7 +52,7 @@ export default class App extends React.Component {
             'https://sujeitoprogramador.com/instareact/fotoPerfil1.png',
           publicationImg: 'https://sujeitoprogramador.com/instareact/foto4.png',
           likeada: false,
-          likers: 1,
+          likers: 0,
         },
         {
           id: '5',
