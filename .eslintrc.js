@@ -33,5 +33,7 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-console': 'off',
     'no-use-before-define': 'off',
+    'react/prefer-stateless-function': 'off',
+    'global-require': 'off',
   },
 };
