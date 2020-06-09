@@ -16,51 +16,51 @@ export default class App extends React.Component {
       feed: [
         {
           id: '1',
-          nome: 'Lucas Silva',
-          descricao: 'Mais um dia de muitos bugs :)',
-          imgperfil:
+          name: 'Lucas Silva',
+          description: 'Mais um dia de muitos bugs :)',
+          profileImg:
             'https://sujeitoprogramador.com/instareact/fotoPerfil1.png',
-          imgPublicacao: 'https://sujeitoprogramador.com/instareact/foto1.png',
+          publicationImg: 'https://sujeitoprogramador.com/instareact/foto1.png',
           likeada: false,
           likers: 0,
         },
         {
           id: '2',
-          nome: 'Matheus',
-          descricao: 'Isso sim é ser raiz!!!!!',
-          imgperfil:
+          name: 'Matheus',
+          description: 'Isso sim é ser raiz!!!!!',
+          profileImg:
             'https://sujeitoprogramador.com/instareact/fotoPerfil2.png',
-          imgPublicacao: 'https://sujeitoprogramador.com/instareact/foto2.png',
+          publicationImg: 'https://sujeitoprogramador.com/instareact/foto2.png',
           likeada: false,
           likers: 0,
         },
         {
           id: '3',
-          nome: 'Jose Augusto',
-          descricao: 'Bora trabalhar Haha',
-          imgperfil:
+          name: 'Jose Augusto',
+          description: 'Bora trabalhar Haha',
+          profileImg:
             'https://sujeitoprogramador.com/instareact/fotoPerfil3.png',
-          imgPublicacao: 'https://sujeitoprogramador.com/instareact/foto3.png',
+          publicationImg: 'https://sujeitoprogramador.com/instareact/foto3.png',
           likeada: false,
           likers: 3,
         },
         {
           id: '4',
-          nome: 'Gustavo Henrique',
-          descricao: 'Isso sim que é TI!',
-          imgperfil:
+          name: 'Gustavo Henrique',
+          description: 'Isso sim que é TI!',
+          profileImg:
             'https://sujeitoprogramador.com/instareact/fotoPerfil1.png',
-          imgPublicacao: 'https://sujeitoprogramador.com/instareact/foto4.png',
+          publicationImg: 'https://sujeitoprogramador.com/instareact/foto4.png',
           likeada: false,
           likers: 1,
         },
         {
           id: '5',
-          nome: 'Guilherme',
-          descricao: 'Boa tarde galera do insta...',
-          imgperfil:
+          name: 'Guilherme',
+          description: 'Boa tarde galera do insta...',
+          profileImg:
             'https://sujeitoprogramador.com/instareact/fotoPerfil2.png',
-          imgPublicacao: 'https://sujeitoprogramador.com/instareact/foto5.png',
+          publicationImg: 'https://sujeitoprogramador.com/instareact/foto5.png',
           likeada: false,
           likers: 32,
         },
@@ -88,8 +88,9 @@ export default class App extends React.Component {
 
         <FlatList
           showsHorizontalScrollIndicator={false}
+          keyExtractor={(item) => item.id}
           data={this.state.feed}
-          renderItem={(item) => <List data={item} />}
+          renderItem={({ item }) => <List data={item} />}
         />
       </View>
     );
